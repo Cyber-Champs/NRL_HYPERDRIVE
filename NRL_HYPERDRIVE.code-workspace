@@ -1,0 +1,75 @@
+{
+    "folders": [
+        {
+            "name": "ControllerFirmware",
+            "path": "ControllerFirmware"
+        },
+        {
+            "name": "RobotFirmware",
+            "path": "RobotFirmware"
+        }
+    ],
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "NRL: Flash Controller",
+                "detail": "Flash the prebuilt NRL controller firmware to a connected ESP32-S3 (no compile). Set your team's channel afterwards on the controller's WiFi-channel screen.",
+                "type": "shell",
+                "command": "bash",
+                "args": [
+                    "${workspaceFolder:ControllerFirmware}/flash-controller.sh"
+                ],
+                "windows": {
+                    "command": "cmd",
+                    "args": [
+                        "/c",
+                        "${workspaceFolder:ControllerFirmware}\\flash-controller.bat"
+                    ]
+                },
+                "options": {
+                    "cwd": "${workspaceFolder:ControllerFirmware}",
+                    "env": {
+                        "NRL_NO_PAUSE": "1"
+                    }
+                },
+                "presentation": {
+                    "reveal": "always",
+                    "panel": "dedicated",
+                    "focus": true,
+                    "clear": true
+                },
+                "problemMatcher": []
+            },
+            {
+                "label": "NRL: New OpMode",
+                "detail": "Create a new robot OpMode (TeleOp or Auto) from a minimal template.",
+                "type": "shell",
+                "command": "bash",
+                "args": [
+                    "${workspaceFolder:RobotFirmware}/../tools/new-nrl-opmode.sh"
+                ],
+                "windows": {
+                    "command": "cmd",
+                    "args": [
+                        "/c",
+                        "${workspaceFolder:RobotFirmware}\\..\\tools\\new-nrl-opmode.bat"
+                    ]
+                },
+                "options": {
+                    "cwd": "${workspaceFolder:RobotFirmware}/..",
+                    "env": {
+                        "NRL_NO_PAUSE": "1"
+                    }
+                },
+                "presentation": {
+                    "reveal": "always",
+                    "panel": "dedicated",
+                    "focus": true,
+                    "clear": true
+                },
+                "problemMatcher": []
+            }
+        ]
+    }
+}

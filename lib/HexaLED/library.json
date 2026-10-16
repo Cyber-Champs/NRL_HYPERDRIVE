@@ -1,0 +1,15 @@
+{
+  "name": "HexaLED",
+  "version": "1.0.0",
+  "description": "NeoPixel status and user LED driver for HEXA COMMAND HUB",
+  "keywords": ["led", "neopixel", "ws2812b", "rgb", "status", "esp32", "hexa"],
+  "authors": [
+    {
+      "name": "Rush",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "platforms": "espressif32",
+  "frameworks": "arduino"
+}
